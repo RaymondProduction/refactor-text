@@ -12,24 +12,20 @@ function getTextWidth(text, font) {
 
 function refactor() {
  var text = document.getElementById("text").value;
- text = text.replace(/\n/g, ' ');
- var textArray = text.split(' ');
+ var textArray = text.replace(/\n/g, ' ').split(' ');
  var textResult = [''];
  var j = 0;
  for (var i =0; i<textArray.length; i++) {
-  debugger;
-  while (getTextWidth(textResult[i], "bold 12pt arial") < 100) {
-    textResult[j] += textArray[j] + ' ';
-    console.log(textResult);
+  while (
+         getTextWidth(textResult[i], "bold 12pt arial") < 400 &&
+         textArray[j]
+        ) {
+    textResult[i] += textArray[j] + ' ';
+    console.log(getTextWidth(textResult[i], "bold 12pt arial"));
     j++;
   }
   textResult.push('');
  }
- console.log(getTextWidth(text, "bold 12pt arial"));
- // text = text.replace(/\n/g, '').replace(/(.{15})/g, '$1\n');
- console.log(textResult);
- document.getElementById('text_refactored').value = text;
- console.log(document.getElementById("text").value);
-// https://stackoverflow.com/questions/118241/calculate-text-width-with-javascript
+ document.getElementById('text_refactored').value = textResult.join('\n');
 };
 
