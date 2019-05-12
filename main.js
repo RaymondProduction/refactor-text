@@ -1,5 +1,8 @@
 // Get the input field
 var input = document.getElementById("generator");
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById("text").value = '';
+  })
 
 function getTextWidth(text, font) {
     // re-use canvas object for better performance
@@ -28,4 +31,3 @@ function refactor() {
  }
  document.getElementById('text_refactored').value = textResult.join('\n');
 };
-

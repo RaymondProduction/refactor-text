@@ -2,10 +2,44 @@
  <head>
   <title>Text refactor</title>
   <script src="main.js"></script>
+  <link href="./css/bootstrap.css" rel="stylesheet">
  </head>
  <body>
-   <textarea style="font-family: Arial; font-size:16px" id="text"></textarea>
-   <button onclick="refactor()">Refactor</button>
-   <textarea style="font-family: Arial; font-size:16px" id="text_refactored"></textarea>
+   <div class="col text-center p-3">
+     Text refactor
+   </div>
+   <div class="form-group row">
+     <label class="col-3 col-form-label" for="text" title="Text">
+       Text:
+     </label>
+     <div class="col-sm-8">
+        <textarea
+        class="form-control"
+        style="font-family: Arial; font-size:16px"
+        id="text"
+        row="10">
+        </textarea>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-3 col-form-label" for="text" title="Text">
+      Refactored text:
+    </label>
+    <div class="col-sm-8">
+       <textarea
+       class="form-control"
+       style="font-family: Arial; font-size:16px"
+       id="text_refactored"
+       row="10">
+       </textarea>
+   </div>
+ </div>
+ <div class="col text-center">
+  <button
+  class="btn btn-primary"
+  onclick="refactor()">Refactor</button>
+</div>
+
+</div>
  </body>
 </html>
